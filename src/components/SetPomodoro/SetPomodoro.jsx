@@ -62,7 +62,7 @@ const SetPomodoro = () => {
         <form noValidate onSubmit={handleSubmit}>
                 <div className="input-wrapper">
                     <div className="elements">
-                    <label htmlFor="input">Working Time (hours)</label>
+                    <label htmlFor="input">Working Time (hr)</label>
                     <input className="input" type="number" name="work" onChange={handleChange} />
                     </div>
                     <div className="elements">
