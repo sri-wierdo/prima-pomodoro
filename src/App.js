@@ -22,7 +22,9 @@ const App = () => {
   return (
     <div className="container">
       <h1>Pomodoro</h1>
-      <small>Be productive the right way.</small>
+      <small>A Better way to be Productive</small>
+      <small>Just enter how many focused hours you need</small>
+        <small>To finish whatever you want.. </small><small>And just Follow the clock my Friend</small>
       {pomodoro !== 0 ?
       <>
         <ul className="labels">

@@ -13,14 +13,15 @@ code {
 }
 
 .container {
-  color:#c9ccea;
+  color:#C1FAFF;;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: rgb(39,42,85);
-  background: radial-gradient(circle, #1E2140 0%, #151932 65%); 
+  background: #7C3335;
+  background-image: url(../src/bg-texture.png);
+  background-size: 50%;
 }
 
 .container h1 {

@@ -38,10 +38,10 @@ const SetPomodoro = () => {
     }
     const handleSubmit = e => {
         e.preventDefault()
-        const totalTime = e.target.work.value;
-        const numberOfBreaks = e.target.numberOfBreaks.value;
-        const longBreak = e.target.longBreak.value;
-        const numberOfCycles = numberOfBreaks;
+        let totalTime = e.target.work.value;
+        let numberOfBreaks = e.target.numberOfBreaks.value;
+        let longBreak = e.target.longBreak.value;
+        let numberOfCycles = numberOfBreaks;
         let cycleTime = Math.round((totalTime*60) / numberOfCycles);
         const shortBreak = 5;
         console.log(cycleTime)
@@ -63,15 +63,15 @@ const SetPomodoro = () => {
                 <div className="input-wrapper">
                     <div className="elements">
                     <label htmlFor="input">Working Time (hr)</label>
-                    <input className="input" type="number" name="work" onChange={handleChange} />
+                    <input className="input" type="number" name="work" onChange={handleChange} defaultValue = {1}/>
                     </div>
                     <div className="elements">
                     <label htmlFor="input">No. of Breaks</label>
-                    <input className="input" type="number" name="numberOfBreaks" onChange={handleChange} />
+                    <input className="input" type="number" name="numberOfBreaks" onChange={handleChange} defaultValue = {2}/>
                     </div>
                     <div className="elements">
                     <label htmlFor="input">longest break(mins)</label>
-                    <input className="input" type="number" name="longBreak" onChange={handleChange} />
+                    <input className="input" type="number" name="longBreak" onChange={handleChange} defaultValue = {30}/>
                     </div>
                 </div>
                 <button type='submit'>Set</button>
