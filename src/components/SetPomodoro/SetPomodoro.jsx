@@ -34,6 +34,8 @@ const SetPomodoro = () => {
                     long: parseInt(value)
                 })
                 break;
+            default:
+                break;
         }
     }
     const handleSubmit = e => {
@@ -44,14 +46,18 @@ const SetPomodoro = () => {
         let numberOfCycles = numberOfBreaks;
         let cycleTime = Math.round((totalTime*60) / numberOfCycles);
         const shortBreak = 5;
-        console.log(cycleTime)
-        console.log(shortBreak)
-        console.log(longBreak)
-        console.log(numberOfCycles)
+
+        if(totalTime == 0 || numberOfBreaks == 0 || longBreak == 0){
+            alert("Please fill non Zero Values")
+            return
+        }
+
+
         newTimer.work = cycleTime;
         newTimer.short = shortBreak;
         newTimer.long = longBreak;
-        let cycleCounter = 0;
+
+
 
         updateExecute(newTimer)
     }
@@ -63,15 +69,15 @@ const SetPomodoro = () => {
                 <div className="input-wrapper">
                     <div className="elements">
                     <label htmlFor="input">Working Time (hr)</label>
-                    <input className="input" type="number" name="work" onChange={handleChange} defaultValue = {1}/>
+                    <input className="input" type="number" name="work" min="1" onChange={handleChange} defaultValue = {1}/>
                     </div>
                     <div className="elements">
                     <label htmlFor="input">No. of Breaks</label>
-                    <input className="input" type="number" name="numberOfBreaks" onChange={handleChange} defaultValue = {2}/>
+                    <input className="input" type="number" name="numberOfBreaks" min="1" onChange={handleChange} defaultValue = {2}/>
                     </div>
                     <div className="elements">
                     <label htmlFor="input">longest break(mins)</label>
-                    <input className="input" type="number" name="longBreak" onChange={handleChange} defaultValue = {30}/>
+                    <input className="input" type="number" name="longBreak" min="1" onChange={handleChange} defaultValue = {30}/>
                     </div>
                 </div>
                 <button type='submit'>Set</button>
